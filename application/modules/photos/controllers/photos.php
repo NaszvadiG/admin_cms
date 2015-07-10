@@ -54,7 +54,7 @@ class Photos extends CI_Controller
         $name = $_FILES['foto']['name'];
 
         //Upload Directory
-        $dir                      = './assets/images/';
+        $dir                      = './public/images/';
 
         //Configuration Upload File
         $config = array(
@@ -98,8 +98,8 @@ class Photos extends CI_Controller
 
                 //Configuration Resize Upload File
                 $img_lib['image_library']   = 'gd2';
-                $img_lib['source_image']	= './assets/images/'.$images_name;
-                $img_lib['new_image']       = './assets/images/photos';
+                $img_lib['source_image']	= './public/images/'.$images_name;
+                $img_lib['new_image']       = './public/images/photos';
                 $img_lib['maintain_ratio']  = TRUE;
                 $img_lib['width']	        = 700;
                 $img_lib['height']	        = 700;
@@ -117,7 +117,7 @@ class Photos extends CI_Controller
                 );
 
                 $this->model_general->saveTable('tbl_photos',$Dataphotos);
-                unlink('./assets/images/'.$images_name);
+                unlink('./public/images/'.$images_name);
                 redirect('photos');
             }
         }
@@ -145,7 +145,7 @@ class Photos extends CI_Controller
         $name = $_FILES['foto']['name'];
 
         //Upload Directory
-        $dir                      = './assets/images/';
+        $dir                      = './public/images/';
 
         //Configuration Upload File
         $config = array(
@@ -202,8 +202,8 @@ class Photos extends CI_Controller
 
                     //Configuration Resize Upload File
                     $img_lib['image_library']   = 'gd2';
-                    $img_lib['source_image']	= './assets/images/'.$images_name;
-                    $img_lib['new_image']       = './assets/images/photos';
+                    $img_lib['source_image']	= './public/images/'.$images_name;
+                    $img_lib['new_image']       = './public/images/photos';
                     $img_lib['maintain_ratio']  = TRUE;
                     $img_lib['width']	        = 700;
                     $img_lib['height']	        = 700;
@@ -221,10 +221,10 @@ class Photos extends CI_Controller
                     );
 
                     $ImagesName = $this->model_general->getRowDataFromTable('tbl_photos',array('id' => $id));
-                    unlink('./assets/images/photos/'.$ImagesName->photos_file);
+                    unlink('./public/images/photos/'.$ImagesName->photos_file);
 
                     $this->model_general->updateTable('tbl_photos',array('id' => $id),$Dataphotos);
-                    unlink('./assets/images/'.$images_name);
+                    unlink('./public/images/'.$images_name);
                     redirect('photos');
                 }
             }
@@ -244,7 +244,7 @@ class Photos extends CI_Controller
                 if (empty($ImagesName->photos_file)) {
                     $this->model_general->deleteRowTable('tbl_photos',array('id' => $value));
                 } else {
-                    unlink('./assets/images/photos/'.$ImagesName->photos_file);
+                    unlink('./public/images/photos/'.$ImagesName->photos_file);
                     $this->model_general->deleteRowTable('tbl_photos',array('id' => $value));
                 }
             }

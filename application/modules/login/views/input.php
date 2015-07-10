@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <title><?php echo $title; ?></title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
-    <link href="<?php echo base_url(); ?>assets/css/bootstrap.css" rel="stylesheet" type="text/css" />
-    <link href="<?php echo base_url(); ?>assets/plugins/font-awesome/font-awesome.css" rel="stylesheet" type="text/css" />
-    <link href="<?php echo base_url(); ?>assets/css/AdminLTE.css" rel="stylesheet" type="text/css" />
-    <link href="<?php echo base_url(); ?>assets/plugins/iCheck/square/blue.css" rel="stylesheet" type="text/css" />
+    <link href="<?php echo base_url(); ?>public/css/bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="<?php echo base_url(); ?>public/plugins/font-awesome/font-awesome.css" rel="stylesheet" type="text/css" />
+    <link href="<?php echo base_url(); ?>public/css/AdminLTE.css" rel="stylesheet" type="text/css" />
+    <link href="<?php echo base_url(); ?>public/plugins/iCheck/square/blue.css" rel="stylesheet" type="text/css" />
   </head>
   <body class="login-page">
     <div class="login-box">
@@ -42,8 +42,8 @@
       </div>
     </div>
 
-    <script src="<?php echo base_url(); ?>assets/plugins/jQuery/jQuery-2.1.3.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/js/bootstrap.min.js" type="text/javascript"></script>
-    <script src="<?php echo base_url(); ?>assets/plugins/iCheck/icheck.min.js" type="text/javascript"></script>
+    <script src="<?php echo base_url(); ?>public/plugins/jQuery/jQuery-2.1.3.min.js"></script>
+    <script src="<?php echo base_url(); ?>public/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="<?php echo base_url(); ?>public/plugins/iCheck/icheck.min.js" type="text/javascript"></script>
   </body>
 </html>

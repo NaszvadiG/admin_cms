@@ -46,7 +46,7 @@
                                         <input type="hidden" name="array_id[]" value="<?php echo $row->id; ?>" class="check">
                                         <td class="text-center"><input type="checkbox" name="id[<?php echo $row->id; ?>]" class="check"></td>
                                         <td><?php echo (implode(" ", array_slice(explode(" ", strip_tags($row->banners_title)),0,3))); ?></td>
-                                        <td><img src="<?php echo base_url(); ?>assets/images/banners/<?php echo $row->banners_file; ?>" widht="50" height="50"></td>
+                                        <td><img src="<?php echo base_url(); ?>public/images/banners/<?php echo $row->banners_file; ?>" widht="50" height="50"></td>
                                         <td><?php echo $row->publish; ?></td>
                                         <td><?php echo date('d-m-Y',strtotime($row->date_created)); ?></td>
                                         <td class="text-center">

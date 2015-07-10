@@ -47,7 +47,7 @@
                                         <input type="hidden" name="array_id[]" value="<?php echo $row->id; ?>" class="check">
                                         <td class="text-center"><input type="checkbox" name="id[<?php echo $row->id; ?>]" class="check"></td>
                                         <td><?php echo (implode(" ", array_slice(explode(" ", strip_tags($row->photos_title)),0,3))); ?></td>
-                                        <td><img src="<?php echo base_url(); ?>assets/images/photos/<?php echo $row->photos_file; ?>" widht="50" height="50"></td>
+                                        <td><img src="<?php echo base_url(); ?>public/images/photos/<?php echo $row->photos_file; ?>" widht="50" height="50"></td>
                                         <td><?php echo (implode(" ", array_slice(explode(" ", strip_tags($row->photos_desc)),0,3))); ?></td>
                                         <td><?php echo $row->publish; ?></td>
                                         <td><?php echo date('d-m-Y',strtotime($row->date_created)); ?></td>

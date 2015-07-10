@@ -33,7 +33,7 @@
                                     <?php
                                         if (!empty($edit->news_file)){
                                     ?>
-                                            <img class="img img-responsive" src="<?php echo base_url(); ?>assets/images/news/<?php echo $edit->news_file; ?>" width="150"><br>
+                                            <img class="img img-responsive" src="<?php echo base_url(); ?>public/images/news/<?php echo $edit->news_file; ?>" width="150"><br>
                                     <?php
                                         }
                                     ?>

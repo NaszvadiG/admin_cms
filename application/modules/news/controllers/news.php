@@ -58,7 +58,7 @@ class News extends CI_Controller
         $name = $_FILES['foto']['name'];
 
         //Upload Directory
-        $dir                      = './assets/images/';
+        $dir                      = './public/images/';
 
         //Configuration Upload File
         $config = array(
@@ -114,8 +114,8 @@ class News extends CI_Controller
 
                     //Configuration Resize Upload File
                     $img_lib['image_library']   = 'gd2';
-                    $img_lib['source_image']	= './assets/images/'.$images_name;
-                    $img_lib['new_image']       = './assets/images/news';
+                    $img_lib['source_image']	= './public/images/'.$images_name;
+                    $img_lib['new_image']       = './public/images/news';
                     $img_lib['maintain_ratio']  = TRUE;
                     $img_lib['width']	        = 700;
                     $img_lib['height']	        = 700;
@@ -133,7 +133,7 @@ class News extends CI_Controller
                     );
 
                     $this->model_general->saveTable('tbl_news',$DataNews);
-                    unlink('./assets/images/'.$images_name);
+                    unlink('./public/images/'.$images_name);
                     redirect('news');
                 }
             }
@@ -162,7 +162,7 @@ class News extends CI_Controller
         $name = $_FILES['foto']['name'];
 
         //Upload Directory
-        $dir                      = './assets/images/';
+        $dir                      = './public/images/';
 
         //Configuration Upload File
         $config = array(
@@ -219,8 +219,8 @@ class News extends CI_Controller
 
                     //Configuration Resize Upload File
                     $img_lib['image_library']   = 'gd2';
-                    $img_lib['source_image']	= './assets/images/'.$images_name;
-                    $img_lib['new_image']       = './assets/images/news';
+                    $img_lib['source_image']	= './public/images/'.$images_name;
+                    $img_lib['new_image']       = './public/images/news';
                     $img_lib['maintain_ratio']  = TRUE;
                     $img_lib['width']	        = 700;
                     $img_lib['height']	        = 700;
@@ -238,10 +238,10 @@ class News extends CI_Controller
                     );
 
                     $ImagesName = $this->model_general->getRowDataFromTable('tbl_news',array('id' => $id));
-                    unlink('./assets/images/news/'.$ImagesName->news_file);
+                    unlink('./public/images/news/'.$ImagesName->news_file);
 
                     $this->model_general->updateTable('tbl_news',array('id' => $id),$DataNews);
-                    unlink('./assets/images/'.$images_name);
+                    unlink('./public/images/'.$images_name);
                     redirect('news');
                 }
             }
@@ -261,7 +261,7 @@ class News extends CI_Controller
                 if (empty($ImagesName->news_file)) {
                     $this->model_general->deleteRowTable('tbl_news',array('id' => $value));
                 } else {
-                    unlink('./assets/images/news/'.$ImagesName->news_file);
+                    unlink('./public/images/news/'.$ImagesName->news_file);
                     $this->model_general->deleteRowTable('tbl_news',array('id' => $value));
                 }
             }

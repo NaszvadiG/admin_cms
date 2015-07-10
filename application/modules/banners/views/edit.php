@@ -23,7 +23,7 @@
                             <div class="form-group">
                                 <label class="control-label col-sm-2">Unggah Foto</label>
                                 <div class="col-md-8">
-                                    <img class="img img-responsive" src="<?php echo base_url(); ?>assets/images/banners/<?php echo $edit->banners_file; ?>" width="150"><br>
+                                    <img class="img img-responsive" src="<?php echo base_url(); ?>public/images/banners/<?php echo $edit->banners_file; ?>" width="150"><br>
                                     <input type="file" name="foto" accept="image/*">
                                     <div class="text-danger"><?php echo $error; ?></div>
                                 </div>

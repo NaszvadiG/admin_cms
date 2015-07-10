@@ -54,7 +54,7 @@ class Banners extends CI_Controller
         $name = $_FILES['foto']['name'];
 
         //Upload Directory
-        $dir                      = './assets/images/';
+        $dir                      = './public/images/';
 
         //Configuration Upload File
         $config = array(
@@ -97,8 +97,8 @@ class Banners extends CI_Controller
 
                 //Configuration Resize Upload File
                 $img_lib['image_library']   = 'gd2';
-                $img_lib['source_image']	= './assets/images/'.$images_name;
-                $img_lib['new_image']       = './assets/images/banners';
+                $img_lib['source_image']	= './public/images/'.$images_name;
+                $img_lib['new_image']       = './public/images/banners';
                 $img_lib['maintain_ratio']  = TRUE;
                 $img_lib['width']	        = 700;
                 $img_lib['height']	        = 700;
@@ -115,7 +115,7 @@ class Banners extends CI_Controller
                 );
 
                 $this->model_general->saveTable('tbl_banners',$Databanners);
-                unlink('./assets/images/'.$images_name);
+                unlink('./public/images/'.$images_name);
                 redirect('banners');
             }
         }
@@ -143,7 +143,7 @@ class Banners extends CI_Controller
         $name = $_FILES['foto']['name'];
 
         //Upload Directory
-        $dir                      = './assets/images/';
+        $dir                      = './public/images/';
 
         //Configuration Upload File
         $config = array(
@@ -198,8 +198,8 @@ class Banners extends CI_Controller
 
                     //Configuration Resize Upload File
                     $img_lib['image_library']   = 'gd2';
-                    $img_lib['source_image']	= './assets/images/'.$images_name;
-                    $img_lib['new_image']       = './assets/images/banners';
+                    $img_lib['source_image']	= './public/images/'.$images_name;
+                    $img_lib['new_image']       = './public/images/banners';
                     $img_lib['maintain_ratio']  = TRUE;
                     $img_lib['width']	        = 700;
                     $img_lib['height']	        = 700;
@@ -216,10 +216,10 @@ class Banners extends CI_Controller
                     );
 
                     $ImagesName = $this->model_general->getRowDataFromTable('tbl_banners',array('id' => $id));
-                    unlink('./assets/images/banners/'.$ImagesName->banners_file);
+                    unlink('./public/images/banners/'.$ImagesName->banners_file);
 
                     $this->model_general->updateTable('tbl_banners',array('id' => $id),$Databanners);
-                    unlink('./assets/images/'.$images_name);
+                    unlink('./public/images/'.$images_name);
                     redirect('banners');
                 }
             }
@@ -239,7 +239,7 @@ class Banners extends CI_Controller
                 if (empty($ImagesName->banners_file)) {
                     $this->model_general->deleteRowTable('tbl_banners',array('id' => $value));
                 } else {
-                    unlink('./assets/images/banners/'.$ImagesName->banners_file);
+                    unlink('./public/images/banners/'.$ImagesName->banners_file);
                     $this->model_general->deleteRowTable('tbl_banners',array('id' => $value));
                 }
             }
