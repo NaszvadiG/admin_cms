@@ -1,12 +1,13 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
+/**
+ * @author Ado Pabianko
+ * Email adopabianko@gmail.com
+ * Class Photos
+ */
+
 class Photos extends CI_Controller
 {
-
-    /**
-     * @author Ado Pabianko
-     *Create Module Photos
-     **/
 
     public function __construct()
     {
@@ -165,11 +166,11 @@ class Photos extends CI_Controller
         if ($this->form_validation->run() == FALSE) {
             $data = array(
                 'title'    => 'Administrator - Foto',
-                'subtitle' => 'Tambah Foto',
-                'content'  => 'photos/add',
+                'subtitle' => 'Edit Foto',
+                'content'  => 'photos/edit',
+                'edit'     => $this->model_general->getRowDataFromTable('tbl_photos',array('id' => $id)),
                 'error'    => ''
             );
-
             $this->load->view('template',$data);
         } else {
             if (empty($name)) {
@@ -187,8 +188,9 @@ class Photos extends CI_Controller
                 if (!$this->upload->do_upload('foto')) {
                     $data = array(
                         'title'    => 'Administrator - Foto',
-                        'subtitle' => 'Tambah Foto',
+                        'subtitle' => 'Edit Foto',
                         'content'  => 'photos/edit',
+                        'edit'     => $this->model_general->getRowDataFromTable('tbl_photos',array('id' => $id)),
                         'error'    => $this->upload->display_errors()
                     );
 

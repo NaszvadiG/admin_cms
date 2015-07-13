@@ -1,11 +1,12 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class News_Model extends CI_Model {
+/**
+ * @author Ado Pabianko
+ * Email adopabianko@gmail.com
+ * Class News_Model
+ */
 
-    /**
-     *@author Ado Pabianko
-     *Create Module News
-     **/
+class News_Model extends CI_Model {
 
     function getAllDataNews()
     {

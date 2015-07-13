@@ -1,12 +1,13 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
+/**
+ * @author Ado Pabianko
+ * Email adopabianko@gmail.com
+ * Class News
+ */
+
 class News extends CI_Controller
 {
-
-    /**
-     * @author Ado Pabianko
-     *Create Module News
-     **/
 
     public function __construct()
     {
@@ -184,6 +185,7 @@ class News extends CI_Controller
                 'title'    => 'Administrator - Berita',
                 'subtitle' => 'Tambah Berita',
                 'content'  => 'news/edit',
+                'edit'     => $this->model_general->getRowDataFromTable('tbl_news',array('id' => $id)),
                 'error'    => ''
             );
 
@@ -206,6 +208,7 @@ class News extends CI_Controller
                         'title'    => 'Administrator - Berita',
                         'subtitle' => 'Tambah Berita',
                         'content'  => 'news/edit',
+                        'edit'     => $this->model_general->getRowDataFromTable('tbl_news',array('id' => $id)),
                         'error'    => $this->upload->display_errors()
                     );
 

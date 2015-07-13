@@ -1,11 +1,12 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Users_Model extends CI_Model {
+/**
+ * @author Ado Pabianko
+ * Email adopabianko@gmail.com
+ * Class Users_Model
+ */
 
-    /**
-     *@author Ado Pabianko
-     *Create Module Users
-     **/
+class Users_Model extends CI_Model {
 
     function getAllDataUsers()
     {

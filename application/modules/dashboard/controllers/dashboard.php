@@ -1,11 +1,12 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Dashboard extends CI_Controller {
+/**
+ * @author Ado Pabianko
+ * Email adopabianko@gmail.com
+ * Class Dashboard
+ */
 
-	/**
-	 *@author Ado Pabianko
-     *Module Dashboard
-	**/
+class Dashboard extends CI_Controller {
 
 	public function __construct()
 	{

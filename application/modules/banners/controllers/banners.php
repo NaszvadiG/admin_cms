@@ -1,12 +1,13 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
+/**
+ * @author Ado Pabianko
+ * Email adopabianko@gmail.com
+ * Class Banners
+ */
+
 class Banners extends CI_Controller
 {
-
-    /**
-     * @author Ado Pabianko
-     *Create Module Banners
-     **/
 
     public function __construct()
     {
@@ -164,6 +165,7 @@ class Banners extends CI_Controller
                 'title'    => 'Administrator - Banner',
                 'subtitle' => 'Tambah Banner',
                 'content'  => 'banners/edit',
+                'edit'     => $this->model_general->getRowDataFromTable('tbl_banners',array('id' => $id)),
                 'error'    => ''
             );
 
@@ -185,6 +187,7 @@ class Banners extends CI_Controller
                         'title'    => 'Administrator - Banner',
                         'subtitle' => 'Tambah Banner',
                         'content'  => 'banners/add',
+                        'edit'     => $this->model_general->getRowDataFromTable('tbl_banners',array('id' => $id)),
                         'error'    => $this->upload->display_errors()
                     );
 

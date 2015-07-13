@@ -1,11 +1,12 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Login_Model extends CI_Model {
+/**
+ * @author Ado Pabianko
+ * Email adopabianko@gmail.com
+ * Class Login_Model
+ */
 
-	/**
-	 *@author Ado Pabianko
-     *Create Module Login
-	**/
+class Login_Model extends CI_Model {
 
 	public function getDataLogin($username,$password)
 	{

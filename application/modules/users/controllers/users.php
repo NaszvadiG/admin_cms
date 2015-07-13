@@ -1,11 +1,12 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Users extends CI_Controller {
+/**
+ * @author Ado Pabianko
+ * Email adopabianko@gmail.com
+ * Class Users
+ */
 
-	/**
-	 *@author Ado Pabianko
-     *Create Module Users
-	**/
+class Users extends CI_Controller {
 
 	public function __construct()
 	{
@@ -18,11 +19,10 @@ class Users extends CI_Controller {
 
 		//Set Form Validation
 		$this->form_validation->set_message('required', '%s harus di isi');
-		$this->form_validation->set_message('is_unique', '%s sudah terdaftar di database');
 		$this->form_validation->set_error_delimiters('<div class="text-danger">','</div>');
 		$this->form_validation->set_rules('nama_depan', 'Nama Depan', 'trim|required|xss_clean');
 		$this->form_validation->set_rules('nama_belakang', 'Nama Belakang', 'trim|required|xss_clean');
-		$this->form_validation->set_rules('nama_pengguna', 'Nama Pengguna', 'trim|required|xss_clean|is_unique[tbl_users.username]');
+		$this->form_validation->set_rules('nama_pengguna', 'Nama Pengguna', 'trim|required|xss_clean');
 		$this->form_validation->set_rules('hak_akses', 'Hak Akses', 'trim|required|xss_clean');
 		$this->form_validation->set_rules('status', 'Status', 'trim|required|xss_clean');
 	}
@@ -120,15 +120,7 @@ class Users extends CI_Controller {
 		$status   		= $this->input->post('status');
 
 		if ($this->form_validation->run() == FALSE) {
-			$data = array(
-				'title'    => 'Administrator - Pengguna',
-				'subtitle' => 'Ubah Pengguna',
-				'content'  => 'users/edit',
-				'edit'	   => $this->model_general->getRowDataFromTable('tbl_users',array('id' => $id)),
-				'roles'	   => $this->model_general->getAllDataFromTable('tbl_roles','','','id asc')
-			);
-
-			$this->load->view('template',$data);
+			$this->edit($id);
 		} else {
 			if (empty($kata_sandi)) {
 				$DataUser = array(
@@ -170,25 +162,3 @@ class Users extends CI_Controller {
 	}
 
 }
-
-// Testing
-// $id       = $this->input->post('id');
-// $username = $this->input->post('username');
-// $q_serach = "SELECT * FROM tbl_users WHERE id = '$id'";
-// $q_result = $this->db->query($q_search);
-// $search_username->result();
-
-// if (!empty($username)) {
-// 	if ($q_result->username == $username) {
-// 		echo "Username tidak di ubah";
-// 	} else {
-// 		$search_username = "SELECT * FROM tbl_users WHERE username = '$username'";
-// 		$search_result   = $this->db->query($search_username);
-// 		$search_result->result();
-// 		if ($search_result->username == $username) {
-// 			echo "Nama Pengguna sudah terdaftar di database";
-// 		} else {
-// 			echo "Data Berhasil di ubah";
-// 		}
-// 	}
-// }

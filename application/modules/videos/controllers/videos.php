@@ -1,12 +1,13 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
+/**
+ * @author Ado Pabianko
+ * Email adopabianko@gmail.com
+ * Class Videos
+ */
+
 class Videos extends CI_Controller
 {
-
-    /**
-     * @author Ado Pabianko
-     *Create Module Videos
-     **/
 
     public function __construct()
     {
@@ -104,13 +105,7 @@ class Videos extends CI_Controller
 		$tgl_buat   = date('Y-m-d');
 
 		if ($this->form_validation->run() == FALSE) {
-			$data = array(
-		        'title'    => 'Administrator - Video',
-		        'subtitle' => 'Tambah Video',
-		        'content'  => 'videos/add'
-		    );
-
-		    $this->load->view('template',$data);
+			$this->edit($id);
 		} else {
 			$Datavideos = array(
 	            'user_id'       => $this->session->userdata('id'),
